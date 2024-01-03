@@ -401,15 +401,16 @@ FodyWeavers.xsd
 
 #VSCODE
 
-.vscode/*
-!.vscode/settings.json
-!.vscode/tasks.json
-!.vscode/launch.json
-!.vscode/extensions.json
-!.vscode/*.code-snippets
+webapp/.vscode/*
+webapp/!.vscode/settings.json
+webapp/!.vscode/tasks.json
+webapp/!.vscode/launch.json
+webapp/!.vscode/extensions.json
+webapp/!.vscode/*.code-snippets
 
 # Local History for Visual Studio Code
-.history/
+webapp/.history/
+webapp/.editorconfig
 
 # Built Visual Studio Code Extensions
 *.vsix
