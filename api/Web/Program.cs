@@ -1,5 +1,7 @@
 using Microsoft.EntityFrameworkCore;
-using Repositories;
+using Web.Data;
+using Web.Repositories.Contracts;
+using Web.Repositories.Implementations;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -8,6 +10,7 @@ var connectionString = builder.Configuration.GetConnectionString("DefaultConnect
 builder.Services.AddDbContext<AppDbContext>( 
     options => options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString)));
 
+builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
