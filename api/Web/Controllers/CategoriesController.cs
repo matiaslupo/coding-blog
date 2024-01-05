@@ -25,8 +25,7 @@ public class CategoriesController : ControllerBase
             UrlHandle = request.UrlHandle,
         };
 
-        await _context.Categories.AddAsync(category);
-        await _context.SaveChangesAsync();
+        await _repository.CreateAsync(category);
 
         var response = new CategoryDTO
         {
